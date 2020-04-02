@@ -1,7 +1,6 @@
-package roman;
+package roman.functionality_based;
 
-import org.junit.Assert;
-import org.junit.Test;
+import roman.RomanConverter;
 
 public class FunctionalityBasedTest {
 

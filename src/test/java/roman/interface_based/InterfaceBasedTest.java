@@ -1,7 +1,8 @@
-package roman;
+package roman.interface_based;
 
 import org.junit.Assert;
 import org.junit.Test;
+import roman.RomanConverter;
 
 public class InterfaceBasedTest {
 
