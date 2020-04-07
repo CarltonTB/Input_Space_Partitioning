@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'jacoco'
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'info.solidsoft.pitest' version '1.4.6'
+}
 
 repositories {
     jcenter()
@@ -7,6 +10,13 @@ repositories {
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
-
     testCompile 'junit:junit:4.12'
+    testImplementation(
+            'junit:junit:4.12',
+            'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    )
+}
+
+pitest {
+    targetClasses = ['roman.*']
 }
