@@ -32,4 +32,33 @@ public class InterfaceBasedTest {
             Assert.assertEquals(e.getMessage(), "number out of range (must be 1..3999)");
         }
     }
+
+    @Test
+    public void testFromRomanEmptyString(){
+        try {
+            romanConverter.fromRoman("");
+        } catch (Exception e) {
+            Assert.assertEquals(e.getClass(), IllegalArgumentException.class);
+            Assert.assertEquals(e.getMessage(), "Invalid Roman numeral: ");
+        }
+    }
+
+    @Test
+    public void testFromRomanNull(){
+        try {
+            romanConverter.fromRoman(null);
+        } catch (Exception e) {
+            Assert.assertEquals(e.getClass(), NullPointerException.class);
+        }
+    }
+
+    @Test
+    public void testFromRomanLengthOne(){
+        Assert.assertEquals(1, romanConverter.fromRoman("I"));
+    }
+
+    @Test
+    public void testFromRomanLengthGreaterThanOne() {
+        Assert.assertEquals(9, romanConverter.fromRoman("IX"));
+    }
 }
