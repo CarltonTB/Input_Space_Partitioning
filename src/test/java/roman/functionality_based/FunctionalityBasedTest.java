@@ -99,4 +99,11 @@ public class FunctionalityBasedTest {
             Assert.assertEquals(e.getMessage(), "Invalid Roman numeral: asd");
         }
     }
+
+    @Test
+    public void sequentialConversionTest(){
+        for(int n = 1; n<4000; n++){
+            Assert.assertEquals(n, romanConverter.fromRoman(romanConverter.toRoman(n)));
+        }
+    }
 }
